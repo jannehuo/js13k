@@ -1,5 +1,5 @@
 import {random} from './utils.js'
-
+/** TODO: Randomize velocity and gravity values */
 const config = {
   w: window.innerWidth,
   h: window.innerHeight,
@@ -11,8 +11,9 @@ const config = {
   fuel: 0,
   fuelLimit: 1000,
   launchActive: false,
-  gravity: random(0.01,1),
-  gravitySpeed: 0
+  velX: 1,
+  velY: 1,
+  gravity: 0.5
 }
 
 export {config}
