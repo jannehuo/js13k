@@ -1,52 +1,38 @@
 require('exports-loader?kontra!../libs/kontra.min.js')
-import {random} from './utils.js'
+import {config} from './gameConfig.js'
 const canvas = document.getElementById('game-canvas')
-const ctx = canvas.getContext('2s')
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
-const screen = {
-  w: window.innerWidth,
-  h: window.innerHeight
-}
-const fuelValues = {
-  up:0,
-  right:0,
-  down:0
-}
-let fuel = 0
-let fuelLimit = 1000
-let launchActive = false
-
+canvas.width = config.w
+canvas.height = config.h
 kontra.init()
 
 let sprites = {
   astronaut: kontra.sprite({
     x: 0,        
-    y: screen.h / 2,
+    y: config.h / 2,
     color: 'red',  
     width: 20,     
     height: 40,
     dx: 0          
   }),
   shuttle: kontra.sprite({
-    x: screen.w - 20,        
-    y: (screen.h / 2) - ((screen.h / 2) / 2),
+    x: config.w - 20,        
+    y: (config.h / 2) - ((config.h / 2) / 2),
     color: 'white',  
     width: 20,     
-    height: screen.h / 2,
+    height: config.h / 2,
     dx: 0          
   })
 }
 
 const addFuel = (type) => {
-  fuel += 1;
-  if(fuel <= fuelLimit) {
-    fuelValues[type] += 1;
+  config.fuel += 1;
+  if(config.fuel <= config.fuelLimit) {
+    config.fuelValues[type] += 1;
   }
 }
 
 const launch = () => {
-  sprites.astronaut.dx = fuelValues.right
+  sprites.astronaut.dx = config.fuelValues.right
 }
 
 let loop = kontra.gameLoop({  
@@ -60,7 +46,7 @@ let loop = kontra.gameLoop({
     if (kontra.keys.pressed('down')) {
       addFuel('down')
     }
-    if(launchActive) {
+    if(config.launchActive) {
       sprites.astronaut.update()
     }
   },
@@ -71,9 +57,8 @@ let loop = kontra.gameLoop({
 })
 
 kontra.keys.bind(['enter', 'space'], function() {
-  launchActive = true
+  config.launchActive = true
   launch()
 })
-
 
 loop.start()
