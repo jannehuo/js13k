@@ -1,3 +1,4 @@
+require('exports-loader?kontra!../libs/kontra.min.js')
 import {random} from './utils.js'
 const canvas = document.getElementById('game-canvas')
 const ctx = canvas.getContext('2s')
