@@ -9,7 +9,7 @@ const config = {
     right:0
   },
   fuel: 0,
-  fuelLimit: 1000,
+  fuelLimit: 100,
   launchActive: false,
   resistance:random(-0.1,-0.9),
   gravityMultiplier: random(20,100),

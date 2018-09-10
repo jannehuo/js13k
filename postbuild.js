@@ -31,4 +31,6 @@ archive.append(
     name: 'index.html'
   })
 
+archive.directory('./images/','images');
+
 archive.finalize()
