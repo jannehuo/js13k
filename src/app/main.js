@@ -6,9 +6,9 @@ const canvas = document.getElementById('game-canvas')
 canvas.width = config.w
 canvas.height = config.h
 let astronautImage = new Image()
-astronautImage.src = '/images/astronaut.png'
+astronautImage.src = 'images/astronaut.jpg'
 let shuttleImage = new Image()
-shuttleImage.src = '/images/shuttle.png'
+shuttleImage.src = 'images/shuttle.jpg'
 
 kontra.init()
 particlesInit()
