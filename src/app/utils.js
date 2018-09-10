@@ -18,4 +18,14 @@ const getAreaGravity = (element) => {
   return 0
 }
 
-export {random, getAreaGravity}
+const getShuttlePosition = (shuttle) => {
+  const middle = config.h / 2
+  const bottomLimit = (middle / 2) + 100
+  const bottomDistance = bottomLimit - shuttle.y
+  if(bottomDistance < 0) {
+    return -1
+  }
+  return 1
+}
+
+export {random, getAreaGravity, getShuttlePosition}

@@ -13,15 +13,16 @@ const config = {
   launchActive: false,
   resistance:random(-0.1,-0.9),
   gravityMultiplier: random(20,100),
+  shuttleMovement: 0.01,
   gravity: {
     "1": {
-      y: 0.2
+      y: random(0.1,0.5)
     },
     "2": {
-      y: -0.2
+      y: random(-0.5,0-1)
     },
     "3": {
-      y: 0.3
+      y: random(0.2,0.8)
     }
   }
 }
