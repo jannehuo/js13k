@@ -51,8 +51,7 @@ const draw = (particle, astronaut) => {
 
   let force = (maxDistance - distance) / maxDistance
   
-  if(astronaut.repel) {
-    
+  if(astronaut.x > 10) {
     if (force < 0) {
       force = 0
     } else {
@@ -61,13 +60,13 @@ const draw = (particle, astronaut) => {
     }
     particle.x0 = particle.x
     particle.y0 = particle.y
-    particle.x0 += config.resistance
+    particle.x0 += (config.resistance * -1) / 100
     particle.y0 += getAreaGravity(particle)
-    particle.x += forceDirection.x * force * 50 * 0.99 + (config.resistance)
+    particle.x += forceDirection.x * force * 50 * 0.99 + ((config.resistance * -1) / 100)
     particle.y += forceDirection.y * force * 50 * 0.99 + (getAreaGravity(particle))
   } else {
     particle.y += getAreaGravity(particle)
-    particle.x += config.resistance
+    particle.x += (config.resistance * -1) / 100
   }
   
   ctx.beginPath()

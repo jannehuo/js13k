@@ -1,7 +1,10 @@
-const uiParent = document.getElementById('game-ui')
-
-const initUi = () => {
-
+const updateFuel = (type,val) => {
+  const updatedEl = document.getElementById(type)
+  updatedEl.innerHTML = val
 }
 
-export {initUi}
+const updateTries = (tries) => {
+  document.getElementById('tries').innerHTML = tries
+}
+
+export {updateFuel,updateTries}

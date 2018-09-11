@@ -6,7 +6,39 @@
 </head>
 <body>
   <div id="game-ui">
-    
+    <div class="fuel">
+      <div class="top">
+          &#8593; <span id="up">0</span>
+      </div>
+      <div class="right">
+          &#8594; <span id="right">0</span>
+      </div>
+      <div class="down">
+          &#8595; <span id="down">0</span>
+      </div>
+    </div>
+    <div id="tries">3</div>
+  </div>
+  <div id="start-game-view">
+    <div class="start-info">
+        <h1>Space Trouble</h1>
+      <div class="info-text-content">
+        <p>Astronaut has stranded in space storm and lifesupport system is offline. Your job is to guide the astronaut back to spaceship. You have <strong>100</strong> litres of fuel in your disposal.</p>
+        <p>Use <strong>UP</strong>, <strong>DOWN</strong> & <strong>RIGHT</strong> to control the astronaut.</p>
+        <p>Good Luck!</p>
+      </div>
+      <div class="text-center">
+          <button id="start-game">Start</button>
+      </div>
+    </div>
+  </div>
+  <div id="game-end-view" class="hidden">
+    <div class="end-message">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, omnis!</p>
+      <div class="text-center">
+        <button id="restart-game">Try again</button>
+      </div>
+    </div>
   </div>
   <canvas id="game-canvas"></canvas>
 </body>
