@@ -52,7 +52,8 @@ const multiplyForce = (val) => {
 const checkCollission = () => {
   const xDist = Math.abs(sprites.astronaut.x - sprites.shuttle.x)
   const yDist = Math.abs(sprites.astronaut.y - sprites.shuttle.y)
-  if(xDist < 50 && yDist < 50) {
+  const distance = Math.sqrt(xDist * xDist + yDist * yDist)
+  if(distance < 50) {
     finisgGame()
   }
 }
