@@ -10,20 +10,21 @@ const config = {
     down: 0
   },
   fuel: 0,
-  fuelLimit: 100,
+  fuelLimit: 200,
   launchActive: false,
+  astronautSaved: false,
   resistance:random(1,5),
-  gravityMultiplier: random(20,100),
+  gravityMultiplier: random(1,5),
   shuttleMovement: 0.01,
   gravity: {
     "1": {
-      y: random(1,5) / 10
+      y: random(1,5)
     },
     "2": {
-      y: (random(1,5) / 10) * -1
+      y: random(1,5) * -1
     },
     "3": {
-      y: random(2,8) / 10
+      y: random(2,8)
     }
   }
 }

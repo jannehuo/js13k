@@ -60,13 +60,13 @@ const draw = (particle, astronaut) => {
     }
     particle.x0 = particle.x
     particle.y0 = particle.y
-    particle.x0 += (config.resistance * -1) / 100
+    particle.x0 += (config.resistance * -1) / 4
     particle.y0 += getAreaGravity(particle)
-    particle.x += forceDirection.x * force * 50 * 0.99 + ((config.resistance * -1) / 100)
-    particle.y += forceDirection.y * force * 50 * 0.99 + (getAreaGravity(particle))
+    particle.x += forceDirection.x * force * 50 * 0.99 + ((config.resistance * -1) / 4)
+    particle.y += forceDirection.y * force * 50 * 0.99 + (getAreaGravity(particle) / 5)
   } else {
-    particle.y += getAreaGravity(particle)
-    particle.x += (config.resistance * -1) / 100
+    particle.y += getAreaGravity(particle) / 5
+    particle.x += (config.resistance * -1) / 4
   }
   
   ctx.beginPath()
